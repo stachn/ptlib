@@ -1,1 +1,5 @@
 add_subdirectory(hello_world)
+add_subdirectory(address)
+add_subdirectory(audio)
+add_subdirectory(ether)
+add_subdirectory(netif)
