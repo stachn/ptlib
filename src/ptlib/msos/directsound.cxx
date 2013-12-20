@@ -29,7 +29,9 @@
  * $Date$
  */
 
+#ifdef __GNUC__
 #pragma implementation "directsound.h"
+#endif // __GNUC__
 
 #include <ptlib.h>
 
