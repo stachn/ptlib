@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 2.8)
 set(PROJECT_NAME "ptlib")
 project(${PROJECT_NAME} C CXX)
 
-file(GLOB PT_COMMON_SRC     ptlib/common/*.cxx)
+file(GLOB PT_COMMON_SRC     ptlib/common/*.c*)
 file(GLOB PT_REGEX_SRC      ptlib/common/regex/reg*.c)
 file(GLOB PT_PLATFORM_SRC   ptlib/msos/*.cxx)
 #file(GLOB PT_COMPONENTS_SRC ptclib/*.cxx)

@@ -1,6 +1,5 @@
 #---------------------------------------------
 # Description: PTLib cmake-able build system
-# 
 #---------------------------------------------
 cmake_minimum_required(VERSION 2.8)
 
@@ -32,11 +31,11 @@ configure_file(${CMAKE_MODULE_PATH}/ptbuildopts.h.cmake
 configure_file(${CMAKE_MODULE_PATH}/ptbuildopts.h.cmake
     ${PTLIB_INCLUDE_PATH}/ptlib_config.h)
 
-
 #---------------------
 # Adding subprojects
 #---------------------
 add_subdirectory(src)
+add_subdirectory(samples)
 #add_subdirectory(plugins)
 #add_subdirectory(samples)
 #add_subdirectory(tools)
