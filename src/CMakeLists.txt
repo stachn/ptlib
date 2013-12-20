@@ -10,7 +10,6 @@ project(${PROJECT_NAME} C CXX)
 file(GLOB PT_COMMON_SRC     ptlib/common/*.c*)
 file(GLOB PT_REGEX_SRC      ptlib/common/regex/reg*.c)
 file(GLOB PT_PLATFORM_SRC   ptlib/msos/*.cxx)
-#file(GLOB PT_COMPONENTS_SRC ptclib/*.cxx)
 
 set(PT_COMPONENTS_SRC
     #asnber.cxx
@@ -99,9 +98,11 @@ include_directories(${PTLIB_SRC_ROOT})
 # internal inculdes
 include_directories(${PROJECT_SOURCE_DIR}/ptlib/common/regex)
 
-add_library(PTLibStatic STATIC
+add_library(${ptlib}
    ${PT_COMMON_SRC}
    ${PT_REGEX_SRC}
    ${PT_PLATFORM_SRC}
    ${PT_COMPONENTS_SRC}
    )
+
+set_target_properties(${ptlib} PROPERTIES DEBUG_POSTFIX "d")

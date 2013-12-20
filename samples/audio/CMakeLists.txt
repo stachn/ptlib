@@ -8,6 +8,6 @@ file(GLOB SRC_FILES *.cxx)
 include_directories(${PTLIB_INCLUDE_PATH})
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
-target_link_libraries(${PROJECT_NAME} PTLibStatic)
+target_link_libraries(${PROJECT_NAME} ${ptlib})
 
 
