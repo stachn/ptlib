@@ -3,7 +3,7 @@
 #---------------------------------------------
 cmake_minimum_required(VERSION 2.8)
 
-set(PROJECT_NAME "opalvoip_ptlib")
+set(PROJECT_NAME "opal_ptlib")
 project(${PROJECT_NAME} C CXX)
 
 set(PTLIB_SRC_ROOT ${PROJECT_SOURCE_DIR} CACHE PATH "PTLib source root")
@@ -13,10 +13,25 @@ set(PTLIB_INCLUDE_PATH ${PTLIB_SRC_ROOT}/include)
 #---------------------
 # Options block
 #---------------------
+option(BUILD_SHARED_LIBS "Build ptlib as shared library" OFF)
+option(WITH_SAMPLES "Build ptlib's samples" ON)
 
 #---------------------
 # Configuration block
 #---------------------
+set(ptlib_postfix "")
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+    message(STATUS "Compiling ptlib for 64-bit...")
+    set(ptlib_postfix "${ptlib_postfix}64")
+else()
+    message(STATUS "Compiling ptlib for 32-bit...")
+endif()
+if(NOT ${BUILD_SHARED_LIBS})
+    set(ptlib_postfix "${ptlib_postfix}s")
+endif()
+
+set(ptlib "ptlib${ptlib_postfix}")
+
 include(PTLibUtils)
 
 ptlib_get_version(PTLIB_MAJOR PTLIB_MINOR PTLIB_BUILD)
@@ -35,7 +50,6 @@ configure_file(${CMAKE_MODULE_PATH}/ptbuildopts.h.cmake
 # Adding subprojects
 #---------------------
 add_subdirectory(src)
-add_subdirectory(samples)
-#add_subdirectory(plugins)
-#add_subdirectory(samples)
-#add_subdirectory(tools)
+if (WITH_SAMPLES)
+    add_subdirectory(samples)
+endif()
