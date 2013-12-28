@@ -32,7 +32,7 @@
 #define PTLIB_BUILDOPTS_H
 
 
-#cmakedefine PTLIB_MAJOR ${PTLIB_MAJOR} 
+#cmakedefine PTLIB_MAJOR ${PTLIB_MAJOR}
 #cmakedefine PTLIB_MINOR ${PTLIB_MINOR}
 #cmakedefine PTLIB_BUILD ${PTLIB_BUILD}
 #define PTLIB_VERSION ${PTLIB_MAJOR}.${PTLIB_MINOR}.${PTLIB_BUILD}
@@ -61,6 +61,9 @@
 
 // Windows API version for compile
 #cmakedefine WINVER ${WINVER}
+
+#cmakedefine P_EXPAT ${P_EXPAT}
+
 
 /////////////////////////////////////////////////
 //

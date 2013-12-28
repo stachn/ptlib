@@ -40,7 +40,9 @@ ptlib_write_revision_h()
 get_WIN32_WINNT(WINVER)
 
 include(PTLibConfig)
-
+if(EXPAT_FOUND)
+    set(P_EXPAT 1)
+endif()
 configure_file(${CMAKE_MODULE_PATH}/ptbuildopts.h.cmake
     ${PTLIB_INCLUDE_PATH}/ptbuildopts.h)
 configure_file(${CMAKE_MODULE_PATH}/ptbuildopts.h.cmake
