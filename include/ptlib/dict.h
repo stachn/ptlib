@@ -112,7 +112,7 @@ class PKey : public PObject
        @return
        stream that the index was output to.
      */
-    virtual void PrintOn(ostream & strm) const { strm << this->m_key; }
+    virtual void PrintOn(ostream & strm) const { strm << static_cast<unsigned long>(this->m_key); }
   //@}
 
   /**@name New functions for class */

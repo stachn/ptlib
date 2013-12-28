@@ -347,6 +347,8 @@ class PString : public PCharArray
     PString(ConversionType type,   signed short value, unsigned param = 10);
     PString(ConversionType type, unsigned char  value, unsigned param = 10);
     PString(ConversionType type,   signed char  value, unsigned param = 10);
+    PString(ConversionType type,   PINDEX  value, unsigned param = 10);
+
 
     /* Contruct a new string converting from the spcified data source into
        a string array.
